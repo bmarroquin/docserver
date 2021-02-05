@@ -1,5 +1,6 @@
-from docserver import __version__
+from docserver.doc_import.git import get_repo_tags_without_download
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    tags = get_repo_tags_without_download("https://github.com/bmarroquin/test_repo.git")
+    assert tags == []
